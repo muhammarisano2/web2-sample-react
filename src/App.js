@@ -1,7 +1,6 @@
 import React, {Fragment} from "react";
 import {BrowserRouter, Routes, Route, NavLink, Link, Navigate} from 'react-router-dom'
-import Button from "./components/ButtonCounter";
-import Counter from "./components/Counter";
+import Register from "./pages/auth/Register";
 import DetailProduct from "./pages/DetailProduct";
 import Home from "./pages/Home";
 import Page404 from "./pages/Page404";
@@ -11,9 +10,6 @@ import ProductList from "./pages/ProductList";
 
 function App() {
   // let nilaiSaya = 80
-  const hanldeClick = ()=>{
-    alert('hello world')
-  }
   return (
     <BrowserRouter>
     <nav>
@@ -30,6 +26,7 @@ function App() {
         <Route path="/home" element={<Home/>}/>
         <Route path="/product" element={<Product/>}/>
         <Route path="/product/:id" element={<DetailProduct/>}/>
+        <Route path="/register" element={<Register/>}/>
         <Route path="*" element={<Page404/>} />
       </Routes>
     </BrowserRouter>

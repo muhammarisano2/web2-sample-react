@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Button from '../components/Button'
-import Input from '../components/Input'
+import Button from '../components/base/Button'
+import Input from '../components/base/Input'
 import styles from './product.module.css'
-import Card from '../components/Card'
+import Card from '../components/module/Card'
 
 const ProductList = () => {
     const [product, setProduct] = useState("")
@@ -21,8 +21,8 @@ const ProductList = () => {
     <div>
         <h2>Product List</h2>
         <div className={styles.wrapperInput}> 
-            <Input type="text" placeholder="product" id="product" name="product" label="product" value={product} onChange={handleChange}/>
-            <Button title="Simpan" onClick={handleSimpan}/>
+            <Input type="text" placeholder="product" id="product" name="product" value={product} onChange="product"/>
+            <Button onClick={handleSimpan}>simpan</Button>
         </div>
         {products.map((item)=>(
             <Card content={item} />
