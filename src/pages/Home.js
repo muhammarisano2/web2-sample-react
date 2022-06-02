@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {useSearchParams} from 'react-router-dom'
 import Button from "../components/base/Button";
+import Navbar from "../components/module/Navbar";
 
 const Home = () => {
     const [search, setSearch] = useState('')
@@ -14,7 +15,7 @@ const Home = () => {
     },[])
   return (
     <div>
-     
+     <Navbar/>
       <h1>page home</h1>
       <p>{process.env.REACT_APP_API_BACKEND}</p>
       <input type="text" name="search" placeholder="search" onChange={(e)=>setSearch(e.target.value)} />

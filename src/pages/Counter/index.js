@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import Box from '../../components/module/Box'
 
 const Counter = () => {
-    const {count, email:emailGlo} = useSelector((state)=>state)
+    const {count, email:emailGlo} = useSelector((state)=>state.couter)
     const [email, setEmail] = useState('')
     const dispatch = useDispatch()
     const handleIncrement=()=>{

@@ -6,12 +6,17 @@ const Product = () => {
   const [category, setCategory] = useState([]);
   console.log("helo");
   const navigate = useNavigate()
+
   async function fetchData(){
+    const varToken = localStorage.getItem('token')
     try {
       const result = await axios({
         method: "GET",
         baseURL: "http://localhost:4000/v1",
         url: "/category",
+        headers: {
+          Authorization: 'Bearer ' + varToken
+        }
       });
       setCategory(result.data.data);
     } catch (error) {
