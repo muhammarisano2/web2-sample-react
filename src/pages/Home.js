@@ -10,8 +10,8 @@ const Home = () => {
        setSearchParams({keyword: search})
     }
     useEffect(()=>{
-        console.log(searchParams.get('keyword'));
-    },[searchParams])
+        console.log('test');
+    },[])
   return (
     <div>
      
