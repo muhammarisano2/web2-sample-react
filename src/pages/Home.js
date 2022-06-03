@@ -7,7 +7,7 @@ const Home = () => {
     const [search, setSearch] = useState('')
     let [searchParams, setSearchParams] = useSearchParams({});
     const handleSearch=()=>{
-      // const api = process.env.REACT_APP_API_BACKEND
+      const api = process.env.REACT_APP_API_BACKEND
        setSearchParams({keyword: search})
     }
     useEffect(()=>{
