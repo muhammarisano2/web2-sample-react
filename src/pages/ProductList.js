@@ -7,9 +7,9 @@ import Card from '../components/module/Card'
 const ProductList = () => {
     const [product, setProduct] = useState("")
     const [products, setProducts] = useState([])
-    const handleChange = (e)=>{
-        setProduct(e.target.value)
-    }
+    // const handleChange = (e)=>{
+    //     setProduct(e.target.value)
+    // }
     const handleSimpan =()=>{
         setProducts([
             product,
