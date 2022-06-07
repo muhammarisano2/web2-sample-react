@@ -1,26 +1,21 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../configs/axios";
 // import {useNavigate} from 'react-router-dom'
 
-const Product = () => {
+const Category = () => {
   const [category, setCategory] = useState([]);
   console.log("helo");
   // const navigate = useNavigate()
 
   async function fetchData(){
-    const varToken = localStorage.getItem('token')
     try {
       const result = await axios({
         method: "GET",
-        baseURL: "http://localhost:4000/v1",
         url: "/category",
-        headers: {
-          Authorization: 'Bearer ' + varToken
-        }
       });
       setCategory(result.data.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error.response);
     }
   }
   useEffect(() => {
@@ -63,4 +58,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Category;

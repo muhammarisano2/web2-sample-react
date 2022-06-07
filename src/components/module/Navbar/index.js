@@ -25,13 +25,13 @@ const {user} = useSelector((state)=>state.user)
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">
+              <NavLink className="nav-link active" aria-current="page" to="/home">
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Features
+              <NavLink className="nav-link" to="/product">
+                prodcut
               </NavLink>
             </li>
             <li className="nav-item">
