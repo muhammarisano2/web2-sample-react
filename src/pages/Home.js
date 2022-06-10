@@ -13,6 +13,7 @@ const Home = () => {
     useEffect(()=>{
         console.log('test');
     },[])
+    // sudah selesai feature lgoin
   return (
     <div>
      <Navbar/>
