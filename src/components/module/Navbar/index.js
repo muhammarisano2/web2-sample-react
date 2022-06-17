@@ -1,10 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
-const {user} = useSelector((state)=>state.user)
+// const {user} = useSelector((state)=>state.user)
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="nav">

@@ -27,9 +27,9 @@ const Product = () => {
     );
     console.log(result);
   };
-  const decrement = () => {
-    setCount(count - 1);
-  };
+  // const decrement = () => {
+  //   setCount(count - 1);
+  // };
   const increment3kali = () => {
     setCount((curent) => curent + 1);
     setCount((curent) => curent + 1);
