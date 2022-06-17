@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styles from "./product.module.css";
 import { getProduct } from "../../configs/redux/actions/productAction";
 import axios from "axios";
+import Navbar from "../../components/module/Navbar";
 
 const Product = () => {
   const [page, setPage] = useState({
@@ -49,6 +50,7 @@ const Product = () => {
   }, [page]);
   return (
     <div>
+      <Navbar/>
       <div className={styles.container}>
         <h1>page product</h1>
         <div>

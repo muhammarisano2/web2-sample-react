@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Navbar from '../../components/module/Navbar'
 import {addTodolist} from '../../configs/redux/actions/todoAction'
 
 const Todo = () => {
@@ -13,6 +14,7 @@ const Todo = () => {
     }
   return (
     <div>
+        <Navbar/>
         <h1>page todo</h1>
         <input type="text" name="todo" placeholder='inputkan Todo' value={todo} onChange={(e)=> setTodo(e.target.value)} />
         <button onClick={handleAddTodo}> {isLoading ? 'Loading...': 'Simpan'}</button>
