@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import Box from '../../components/module/Box'
+import Navbar from '../../components/module/Navbar'
 
 const Counter = () => {
     const {count, email:emailGlo} = useSelector((state)=>state.couter)
@@ -23,6 +24,7 @@ const Counter = () => {
     }
   return (
     <div>
+        <Navbar/>
         <h1>page counter</h1>
         <p>Email saya : {emailGlo}</p>
         <p>count : {count}</p>

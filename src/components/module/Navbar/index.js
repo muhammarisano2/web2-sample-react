@@ -1,17 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
-const {user} = useSelector((state)=>state.user)
+// const {user} = useSelector((state)=>state.user)
   return (
     <nav className="navbar navbar-expand-lg bg-light">
-      <div className="container">
+      <div className="nav">
         <NavLink className="navbar-brand" to="/">
           Navbar
         </NavLink>
-        <button
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -21,7 +21,7 @@ const {user} = useSelector((state)=>state.user)
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-        </button>
+        </button> */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
@@ -35,11 +35,16 @@ const {user} = useSelector((state)=>state.user)
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/todo">
-                todo
+              <NavLink className="nav-link" to="/todos">
+                todos
               </NavLink>
             </li>
-            <li><span>{user.fullname}</span></li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/counter">
+                counter
+              </NavLink>
+            </li>
+            {/* <li><span>{user.fullname}</span></li> */}
           </ul>
         </div>
       </div>

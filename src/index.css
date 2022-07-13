@@ -18,3 +18,21 @@ nav > ul > li > a{
 nav > ul > li > a.active{
   color: black;
 }
+.nav{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  align-items: center;
+}
+.navbar-nav{
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+.nav a{
+  text-decoration: none;
+}
