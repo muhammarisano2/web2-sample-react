@@ -35,8 +35,8 @@ const {user} = useSelector((state)=>state.user)
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Pricing
+              <NavLink className="nav-link" to="/todo">
+                todo
               </NavLink>
             </li>
             <li><span>{user.fullname}</span></li>

@@ -1,0 +1,60 @@
+import axios from "axios";
+export const axiosInteceptorResponse = () => {
+  axios.interceptors.response.use(
+    function (response) {
+      // Any status code that lie within the range of 2xx cause this function to trigger
+      // Do something with response data
+      return response;
+    },
+    async function (error) {
+      const originalRequest = error.config;
+      const refreshToken = localStorage.getItem("refreshToken");
+      if (!originalRequest._retry && error.response.status === 400) {
+        if (error.response.data.message === "token invalid") {
+          //   history.push('/login')
+          localStorage.removeItem("token");
+          localStorage.removeItem("refreshToken");
+        } else if (error.response.data.message === "token expired") {
+          originalRequest._retry = true;
+          // resfresh token
+          const { data: RespData } = await axios.post(
+            "http://localhost:4000/v1/users/refresh-token",
+            {
+              refreshToken: refreshToken,
+            }
+          );
+          const newToken = RespData.data.token;
+          const newRefreshToken = RespData.data.refreshToken;
+          localStorage.setItem("token", newToken);
+          localStorage.setItem("refreshToken", newRefreshToken);
+          axios.defaults.headers.common["Authorization"] = `Bearer ${newToken}`;
+          return axios(originalRequest);
+        }
+      }
+      // alert ('jangan di ubah tokennya ya bro...')
+      // Any status codes that falls outside the range of 2xx cause this function to trigger
+      // Do something with response error
+      return Promise.reject(error);
+    }
+  );
+};
+
+export const axiosInterceptorRequest = () => {
+  console.log('hello');
+  axios.interceptors.request.use(
+    function (config) {
+      // Do something before request is sent
+      const token = localStorage.getItem("token");
+      if (token) {
+        config.headers = {
+          Authorization: `Bearer ${token}`,
+        };
+      }
+      return config;
+    },
+    function (error) {
+      // Do something with request error
+      return Promise.reject(error);
+    }
+  );
+};

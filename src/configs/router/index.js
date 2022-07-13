@@ -11,6 +11,7 @@ import ProductList from '../../pages/ProductList'
 import RequireAuth from '../../components/base/RequireAuth'
 import Todo from '../../pages/Todo'
 import Product from '../../pages/Product'
+import Latihan from '../../pages/Latihan'
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/counter" element={<Counter/>}/>
+      <Route path="/latihan" element={<Latihan/>}/>
       <Route path="/todo" element={<Todo/>}/>
       <Route path="*" element={<Page404/>} />
     </Routes>
